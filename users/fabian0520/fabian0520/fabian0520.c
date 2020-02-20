@@ -85,10 +85,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
     #endif
-    case DEL_EEPROM:
-        eeconfig_init();
-        return false;
-        break;
+// ------------------- Layer Code --------------------------------
+    case COLEMAK:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAK);
+      }
+      return false;
+      break;
+    case QWERTY:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_QWERTY);
+      }
+      return false;
+      break;
+     case MIDI:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_MIDI);
+      }
+      return false;
+      break;
+     
     //------------------------------------------------------
     #ifdef i3_NAVIGATION_ENABLE
         case i3_S_1:
