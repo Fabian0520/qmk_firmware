@@ -85,25 +85,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
             break;
     #endif
-// ------------------- Layer Code --------------------------------
-    case COLEMAK:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_COLEMAK);
-      }
-      return false;
-      break;
-    case QWERTY:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
-      break;
-     case MIDI:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_MIDI);
-      }
-      return false;
-      break;
     case DEL_EEPROM:
         eeconfig_init();
         return false;
