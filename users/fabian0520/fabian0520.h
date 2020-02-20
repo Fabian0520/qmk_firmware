@@ -31,6 +31,7 @@
 enum userspace_layers {
   _COLEMAK,
   _QWERTY,
+  _GAME,
   _NUM,
   _SYM, //Gleicher Layer wie FUNC1. Brauche ich nur um mit beiden Tasten in den ADJUST-Layer zu kommen.
   _MOV,
@@ -72,6 +73,7 @@ enum userspace_custom_keycodes {
   MY_COMM,
   MY_DOT,
   SHIFT,
+  DEL_EEPROM,
 };
 
 #endif

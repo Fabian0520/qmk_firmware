@@ -104,7 +104,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-     
+    case DEL_EEPROM:
+        eeconfig_init();
+        return false;
+        break;
     //------------------------------------------------------
     #ifdef i3_NAVIGATION_ENABLE
         case i3_S_1:
