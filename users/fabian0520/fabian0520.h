@@ -48,6 +48,7 @@ enum tapdances{
   TD_BA_OC = 4,
   TD_SPC_ENT = 5,
   TD_Q_ESC = 6,
+  TD_ESC_COL = 7,
 };
 
 enum userspace_custom_keycodes {

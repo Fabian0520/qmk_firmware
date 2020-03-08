@@ -8,4 +8,5 @@
     void TD_BC_OC_r (qk_tap_dance_state_t *state, void *user_data);
     void TD_BA_OC_f(qk_tap_dance_state_t *state, void *user_data);
     void TD_BA_OC_r (qk_tap_dance_state_t *state, void *user_data);
+    void EXIT_GAME (qk_tap_dance_state_t *state, void *user_data);
 #endif
