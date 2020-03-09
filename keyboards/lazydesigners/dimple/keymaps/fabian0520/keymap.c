@@ -161,16 +161,8 @@ KC_TRNS ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  i3_
    */
 
 // LED color settings !only works for layertab, momentary layers!
-layer_state_t layer_state_set_keymap (layer_state_t state) {
-    switch(biton32(state)){
-        case _COLEMAK:
-            rgblight_mode_noeeprom(30);
-            rgblight_sethsv_noeeprom(208, 255, 255);
-            break;
-        case _GAME:
-            rgblight_mode_noeeprom(1);
-            rgblight_sethsv_noeeprom(208, 255, 255);
-            break;
+uint32_t layer_state_set_keymap (uint32_t state) {
+    switch(get_highest_layer(state)){
         case _SYM:
             break;
         case _MOV:
@@ -181,6 +173,22 @@ layer_state_t layer_state_set_keymap (layer_state_t state) {
             break;
         case _NUM:
             break;
+        default: {
+            switch(get_highest_layer(default_layer_state)) {
+                case _COLEMAK:
+                    rgblight_mode_noeeprom(30);
+                    rgblight_sethsv_noeeprom(208, 255, 255);
+                    break;
+                case _QWERTY:
+                    rgblight_mode_noeeprom(30);
+                    rgblight_sethsv_noeeprom(208, 200, 255);
+                    break;
+                case _GAME:
+                    rgblight_sethsv_noeeprom(100, 100, 100);
+                    break;
+            }
+            break;
+        }
     }
     return state;
 }
