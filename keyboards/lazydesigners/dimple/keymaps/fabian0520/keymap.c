@@ -160,6 +160,12 @@ KC_TRNS ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  i3_
    ),
    */
 
+void rgblight_set_hsv_and_mode(uint8_t hue, uint8_t sat, uint8_t val, uint8_t mode) {
+    rgblight_sethsv_noeeprom(hue, sat, val);
+    wait_us(175);  // Add a slight delay between color and mode to ensure it's processed correctly
+    rgblight_mode_noeeprom(mode);
+}
+
 // LED color settings !only works for layertab, momentary layers!
 uint32_t layer_state_set_keymap (uint32_t state) {
     switch(get_highest_layer(state)){
@@ -184,7 +190,7 @@ uint32_t layer_state_set_keymap (uint32_t state) {
                     rgblight_sethsv_noeeprom(208, 200, 255);
                     break;
                 case _GAME:
-                    rgblight_sethsv_noeeprom(100, 100, 100);
+                    rgblight_set_hsv_and_mode(200, 255, 255, RGBLIGHT_MODE_STATIC_LIGHT);
                     break;
             }
             break;
