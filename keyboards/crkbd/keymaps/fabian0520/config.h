@@ -99,7 +99,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define RETRO_TAPPING
 //#define IGNORE_MOD_TAP_INTERRUPT
 
-//#define i3_NAVIGATION_ENABLE
+#define i3_NAVIGATION_ENABLE
 #define CUSTOM_SHIFT_ENABLE
 #define ESC_CAPS_ENABLE
 
