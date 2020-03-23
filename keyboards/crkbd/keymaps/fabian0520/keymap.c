@@ -16,6 +16,11 @@ extern rgblight_config_t rgblight_config;
 
 extern uint8_t is_master;
 
+enum custom_keycodes {
+    ACT_KB = SAFE_RANGE,
+    DE_KB,
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -55,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  ), 
 
 [_ADJUST] =LAYOUT(
-  SCRE_UP ,  DF(_QWERTY)  ,  DF(_COLEMAK) ,  KC_NO   ,   KC_NO  ,   KC_NO  ,  RGB_HUI ,  RGB_SAI ,  RGB_VAI ,  RGB_SPI ,   KC_NO  ,  KC_VOLU ,
+  SCRE_UP ,  DF(_QWERTY)  ,  DF(_COLEMAK) ,  DE_KB   ,   ACT_KB  ,   KC_NO  ,  RGB_HUI ,  RGB_SAI ,  RGB_VAI ,  RGB_SPI ,   KC_NO  ,  KC_VOLU ,
   SCRE_DN , RGB_TOG  ,  RGB_MOD ,  KC_NO   ,   KC_NO  ,   KC_NO  ,  RGB_HUD ,  RGB_SAD ,  RGB_VAD ,  RGB_SPD ,   KC_NO  ,  KC_VOLD ,
    KC_NO  , RGB_RMOD ,   KC_NO  ,  KC_NO   ,   KC_NO  ,   KC_NO  ,   KC_NO  ,   KC_NO  ,   KC_NO  ,   KC_NO  ,   KC_NO  ,  KC_MUTE ,
                                    KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS 
@@ -70,6 +75,22 @@ static uint16_t frame_timer;
 static uint8_t frame_number;
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case ACT_KB:
+            if(record->event.pressed) {
+                SEND_STRING("xinput enable 'AT Translated Set 2 keyboard'");
+            } else {
+                SEND_STRING(SS_TAP(X_ENT));
+            }
+            break;
+        case DE_KB:
+            if(record->event.pressed) {
+                SEND_STRING("xinput disable 'AT Translated Set 2 keyboard'");
+            } else {
+                SEND_STRING(SS_TAP(X_ENT));
+            }
+            break;
+    }
     if (record->event.pressed) {
         oled_timer = timer_read();
         animation_timer = timer_read();
