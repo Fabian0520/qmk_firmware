@@ -18,7 +18,7 @@
 #include "rgb_color_sets.h"
 //#include "fabian0520.h"
 
-#define MOD_0       LT(_MOD,KC_0)
+#define MOD_0       LT(_MOD,KC_P0)
 #define MOD_1       LT(_MOD,KC_A)
 #define SYM_COMM    LT(_SYM,KC_COMM)
 //#define BASE        TO(_BASE)
@@ -43,9 +43,9 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_BASE] = LAYOUT(
-		KC_7      , KC_8     , KC_9     , \
-		KC_4      , KC_5     , KC_6     , \
-		KC_1      , KC_2     , KC_3     , \
+		KC_P7      , KC_P8     , KC_P9     , \
+		KC_P4      , KC_P5     , KC_P6     , \
+		KC_P1      , KC_P2     , KC_P3     , \
         MOD_0     , KC_DOT   , SYM_COMM  \
 	),
  
