@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,  KC_SCLN,    KC_NO, KC_BSPC,    KC_PGUP,
         LT(_SYM, KC_TAB),   KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,   KC_DEL,       KC_PGDN,
         KC_LSFT,     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    MY_COMM,    MY_DOT,   KC_RSFT ,     KC_UP,     KC_END,
-        KC_LCTL, KC_LGUI, KC_LALT,            NUM_SPC,           MOV_ENT,            KC_RALT,   KC_RGUI,  KC_LEFT, KC_DOWN, KC_RIGHT
+        KC_LCTL, KC_LGUI, KC_LALT,            NUM_SPC,           MOV_ENT,            KC_RALT,   KC_RGUI,  KC_RCTL, KC_DOWN, KC_RIGHT
     ),
     /* Default QWERTY layer 
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐   ┌───┐
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,  KC_SCLN,    KC_NO, KC_BSPC,    KC_PGUP,
         LT(_SYM, KC_TAB),   KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,   KC_DEL,       KC_PGDN,
         KC_LSFT,     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    MY_COMM,    MY_DOT,   KC_RSFT ,     KC_UP,     KC_END,
-        KC_LCTL, KC_LGUI, KC_LALT,            NUM_SPC,           MOV_ENT,            KC_RALT,  KC_RGUI,  KC_LEFT, KC_DOWN, KC_RIGHT
+        KC_LCTL, KC_LGUI, KC_LALT,            NUM_SPC,           MOV_ENT,            KC_RALT,  KC_RGUI,  KC_RCTL, KC_DOWN, KC_RIGHT
     ),
     /* Numbers Layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐   ┌───┐
