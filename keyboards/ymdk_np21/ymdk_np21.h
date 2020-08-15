@@ -47,3 +47,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     K02,  K12,  K22,  K32,  \
     K01,  K11,  K21,  K31   \
 )
+
+#define LAYOUT_fabi( \
+   K36, K35, K34, K33, K32, K31 ,  \
+   K26, K25, K24, K23, K22, K21 , \
+   K16, K15, K14, K13, K12, K11 , \
+   K06, K05, K04, K03, K02, K01   \
+) \
+{ \
+  { K06, K05, K04, K03, K02, K01 }, \
+  { K16, K15, K14, K13, K12, K11 }, \
+  { K26, K25, K24, K23, K22, K21 }, \
+  { K36, K35, K34, K33, K32, K31 }  \
+}
+
