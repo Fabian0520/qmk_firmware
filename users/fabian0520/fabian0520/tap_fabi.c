@@ -94,8 +94,6 @@ void TD_BA_OC_r (qk_tap_dance_state_t *state, void *user_data) {
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for one shot SPACE, twice for Caps Lock
   [TD_SFT_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
-  [TD_SPC_ENT]   = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT),
-  [TD_Q_ESC]     = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
   //[TD_BS_OC]  = ACTION_TAP_DANCE_FN_ADVANCED (NULL , TD_BS_OC_f , TD_BS_OC_r),
   //[TD_BR_OC]  = ACTION_TAP_DANCE_FN_ADVANCED (NULL , TD_BR_OC_f , TD_BR_OC_r),
   //[TD_BC_OC]  = ACTION_TAP_DANCE_FN_ADVANCED (NULL , TD_BC_OC_f , TD_BC_OC_r),

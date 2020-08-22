@@ -1,0 +1,7 @@
+#undef RGBLED_NUM
+#define RGBLED_NUM 12
+
+#define RGB_DI_PIN F4
+
+#define UNDERGLOW_ENABLE
+#define CUSTOM_SHIFT_ENABLE
