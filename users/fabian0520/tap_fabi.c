@@ -91,11 +91,25 @@ void TD_BA_OC_r (qk_tap_dance_state_t *state, void *user_data) {
 }
 */
 
+void EXIT_GAME(qk_tap_dance_state_t *state, void *user_data) {
+    switch(state->count){
+        case 1:
+            register_code(KC_ESC);
+            unregister_code(KC_ESC);
+            break;
+        case 2:
+            set_single_persistent_default_layer(_COLEMAK);
+            break;
+    }
+}
+            
+
 qk_tap_dance_action_t tap_dance_actions[] = {
   //Tap once for one shot SPACE, twice for Caps Lock
   [TD_SFT_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
   [TD_SPC_ENT]   = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT),
   [TD_Q_ESC]     = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
+  [TD_ESC_COL]   = ACTION_TAP_DANCE_FN(EXIT_GAME),
   //[TD_BS_OC]  = ACTION_TAP_DANCE_FN_ADVANCED (NULL , TD_BS_OC_f , TD_BS_OC_r),
   //[TD_BR_OC]  = ACTION_TAP_DANCE_FN_ADVANCED (NULL , TD_BR_OC_f , TD_BR_OC_r),
   //[TD_BC_OC]  = ACTION_TAP_DANCE_FN_ADVANCED (NULL , TD_BC_OC_f , TD_BC_OC_r),
