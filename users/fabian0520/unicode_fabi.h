@@ -5,6 +5,7 @@ enum unicode_names {
     CIRCUM,
     GRAVE,
     TILDE,
+    SMILE,
 };
 
 const uint32_t PROGMEM unicode_map[]={
@@ -14,4 +15,5 @@ const uint32_t PROGMEM unicode_map[]={
     [CIRCUM] = 0x005E,
     [GRAVE] = 0x0060,
     [TILDE] = 0x007E,
+    [SMILE] = 0x30C4,
 };
