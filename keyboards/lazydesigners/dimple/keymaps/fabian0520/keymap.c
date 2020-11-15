@@ -48,6 +48,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_LCTL ,  KC_LGUI ,  KC_LALT ,  KC_SPC ,  KC_ENT  , KC_LEFT ,  KC_DOWN ,  KC_RIGHT \
     ),
 
+ [_DIABLO] =LAYOUT( \
+        TD(TD_ESC_COL)  ,   KC_Q   ,   KC_T   ,   KC_I   ,   KC_S   ,   KC_V   ,   KC_J   ,   KC_L   ,   KC_U   ,   KC_Y   ,  KC_SCLN , KC_BSPC  ,\
+        KC_TAB  ,   KC_1   ,   KC_2   ,   KC_3   ,   KC_4   ,   KC_D   ,   KC_H   ,   KC_N   ,   KC_E   ,   KC_I   ,   KC_O   , KC_DEL,\
+        KC_LSFT ,   KC_F   ,   KC_J   ,   KC_L   ,   KC_P   ,   KC_M   ,   KC_K   ,   KC_M   ,  MY_COMM ,  KC_UP   ,  KC_RSFT ,\
+                    KC_LCTL ,  KC_LGUI ,  KC_LALT ,  KC_SPC ,  KC_ENT  , KC_LEFT ,  KC_DOWN ,  KC_RIGHT \
+    ),
+
 /* Qwerty
 * ,-----------------------------------------------------------------------------------.
 * |  ESC |   Q  |   W  |   E  |   R  |   T  |   Y  |   U  |   I  |   O  |   P  |  DEL |
@@ -146,7 +153,7 @@ KC_TRNS ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  KC_NO   ,  i3_
 */
  [_ADJUST] =LAYOUT( \
   SCRE_UP ,  DF(_QWERTY)  ,  DF(_COLEMAK) ,  X(STAR) ,   KC_NO  ,   KC_NO  ,  RGB_VAD ,  RGB_TOG ,  RGB_VAI , KC_VOLU  ,   KC_NO  ,  RESET ,\
-  SCRE_DN ,  UC_MOD  ,   DF(_GAME)   ,   KC_NO  ,   KC_NO  ,   KC_NO  ,  RGB_HUD , RGB_MOD  ,  RGB_HUI , KC_VOLD  ,   KC_NO  , DEL_EEPROM ,\
+  SCRE_DN ,  UC_MOD  , DF(_GAME),DF(_DIABLO),   KC_NO  ,   KC_NO  ,  RGB_HUD , RGB_MOD  ,  RGB_HUI , KC_VOLD  ,   KC_NO  , DEL_EEPROM ,\
    KC_NO  ,   KC_NO  ,   KC_NO  ,   KC_NO  ,   KC_NO  ,   KC_NO  ,  RGB_SAD ,   KC_NO  ,  RGB_SAI , KC_MUTE  ,   KC_NO  ,\
              KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS ,  KC_TRNS \
  ),
