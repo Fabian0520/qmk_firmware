@@ -110,6 +110,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , KC_NO  , i3_S_1 , i3_S_2 , i3_S_3 , KC_TRNS, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
     ),
+    /* GAME HYPE MLG BBY Layer (TOGGLE)
+     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
+     * │Esc│ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │Del│BkS│   │INS│
+     * ├───┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴───┼───┼───┤
+     * │Tab │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │Enter │   │PgD│
+     * ├────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴──┬───┴───│───│
+     * │LShift│ Z │ X │ C │ V │ B │ N │ M │ , │ . │Sft/│ ┌───┐ │LY0│
+     * ├────┬─┴─┬─┴──┬┴───┴───┴─┬─┴───┴──┬┴───│───┴┬───┘ │ ↑ │ └───┘
+     * │LCtl│OS │LAlt│   Space  │  Space │ Fn │ Ln │ ┌───│───│───┐
+     * └────┴───┴────┴──────────┴─────────────┴────┘ │ ← │ ↓ │ → │
+     *                                               └───┴───┴───┘
+     */
+    [_GAME] = LAYOUT_split_space(
+        TD(TD_ESC_COL),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,  KC_P,           KC_NO, KC_BSPC,    KC_PGUP,
+        KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,           KC_DEL,       KC_PGDN,
+        KC_LSFT,     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    MY_COMM,    MY_DOT,   KC_RSFT ,     KC_UP,     KC_END,
+        KC_LCTL, KC_LGUI, KC_LALT,            NUM_SPC,           MOV_ENT,            KC_RALT,  KC_RGUI,  KC_RCTL, KC_DOWN, KC_RIGHT
+    ),
     /* Adjust Layer
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐   ┌───┐
      * │Br+│QWE│COL│STR│   │   │   │   │   │   │   │       │   │   │
@@ -143,18 +161,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                               └───┴───┴───┘
      */
 
-    /* GAME HYPE MLG BBY Layer (TOGGLE)
-     * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-     * │Esc│ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │Del│BkS│   │INS│
-     * ├───┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴───┼───┼───┤
-     * │Tab │ A │ S │ D │ F │ G │ H │ J │ K │ L │ ; │Enter │   │PgD│
-     * ├────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴──┬───┴───│───│
-     * │LShift│ Z │ X │ C │ V │ B │ N │ M │ , │ . │Sft/│ ┌───┐ │LY0│
-     * ├────┬─┴─┬─┴──┬┴───┴───┴─┬─┴───┴──┬┴───│───┴┬───┘ │ ↑ │ └───┘
-     * │LCtl│OS │LAlt│   Space  │  Space │ Fn │ Ln │ ┌───│───│───┐
-     * └────┴───┴────┴──────────┴─────────────┴────┘ │ ← │ ↓ │ → │
-     *                                               └───┴───┴───┘
-     */
 //function for layer indicator LED
 uint32_t layer_state_set_keymap(uint32_t state)
 {
