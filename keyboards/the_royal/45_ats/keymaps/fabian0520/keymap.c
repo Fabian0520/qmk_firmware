@@ -175,6 +175,11 @@ uint32_t layer_state_set_keymap(uint32_t state)
             writePinHigh(D1);
             writePinLow(D2);
             break;
+        case _GAME:
+            writePinLow(D0);
+            writePinLow(D1);
+            writePinHigh(D2);
+            break;
     }
     return state;
 }
